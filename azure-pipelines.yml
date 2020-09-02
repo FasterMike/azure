@@ -5,8 +5,8 @@ trigger:
 resources:
   repositories:
   - repository: template
-  type: github
-  name: Fastermike/azure
+    type: github
+    name: Fastermike/azure
 
 jobs: start.yml@template
 
