@@ -3,10 +3,11 @@ trigger:
 
 
 resources:
-  repositories: template
+  repositories:
+  - repository: template
   type: github
   name: Fastermike/azure
 
-jobs: start.yml@tempate
+jobs: start.yml@template
 
 
