@@ -1,0 +1,12 @@
+trigger:
+- master
+
+
+resources:
+- repositories: template
+- type: github
+- name: Fastermike/azure
+
+jobs: start.yml@tempate
+
+
