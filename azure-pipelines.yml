@@ -9,6 +9,12 @@ resources:
     name: FasterMike/azure    
     endpoint: FasterMike
 
+variables:
+  tag: '$(Build.BuildId)'
+
+
+
+
 stages:
 - template: start.yml@azure
 
