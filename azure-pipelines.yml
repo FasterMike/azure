@@ -5,7 +5,8 @@ trigger:
 resources:
   repositories:
   - repository: azure
-    type: github    
+    type: github
+    name: FasterMike/azure    
     endpoint: FasterMike
 
 stages:
