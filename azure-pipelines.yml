@@ -5,9 +5,9 @@ trigger:
 resources:
   repositories:
   - repository: azure
-    type: github
-    name: Fastermike/azure
+    type: github    
     endpoint: FasterMike
+
 stages:
 - template: start.yml@azure
 
