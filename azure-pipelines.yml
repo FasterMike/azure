@@ -8,7 +8,7 @@ resources:
     type: github
     name: Fastermike/azure
     endpoint: FasterMike
-jobs:
+stages:
 - template: start.yml@azure
 
 
