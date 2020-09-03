@@ -4,10 +4,10 @@ trigger:
 
 resources:
   repositories:
-  - repository: azure
+  - repository: templates
     type: github
     name: Fastermike/azure
-    endpoint: templates
+    endpoint: FasterMike
 jobs:
 - template: start.yml@templates
 
