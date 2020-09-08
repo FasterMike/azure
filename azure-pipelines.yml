@@ -11,7 +11,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '01bcf317-76c9-4254-b566-22e8ac393bc8'
+  dockerRegistryServiceConnection: 'a48be0ed-1f78-41d2-91bb-f56d2cd71017'
   imageRepository: 'fastermikeazure'
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
