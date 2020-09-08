@@ -1,9 +1,10 @@
 stages:
 - stage: Push
   displayName: Push image
+  dependsOn: Build
   jobs:  
   - job: Push
-    displayName: Build
+    displayName: Push
 #    pool:
 #      vmImage: $(vmImageName)
     steps:
@@ -16,3 +17,5 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - upload: manifests
+      artifact: manifests

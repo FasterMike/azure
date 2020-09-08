@@ -16,7 +16,10 @@ variables:
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  
+  imagePullSecret: 'arcmiha1619ec65-auth'
+    
+
+
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
@@ -27,3 +30,7 @@ stages:
 - template: build.yml@azure
 
 - template: push.yml@azure
+
+
+- template: deploy.yml@azure
+
