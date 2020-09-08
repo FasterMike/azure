@@ -13,4 +13,4 @@ stages:
         command: build
         dockerfile: $(dockerfilePath)
         tags: |
-          $(tag)
+          229

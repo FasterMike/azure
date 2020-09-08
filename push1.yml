@@ -1,7 +1,7 @@
 stages:
 - stage: Push
   displayName: Push image
-#  dependsOn: Build
+  dependsOn: Build
   
   jobs:  
   - job: Push
@@ -17,6 +17,6 @@ stages:
 #        dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
-#    - upload: manifests
-#      artifact: manifests
+          228
+    - upload: manifests
+      artifact: manifests
