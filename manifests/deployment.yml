@@ -1,16 +1,21 @@
-apiVersion : apps/v1beta1
+apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: fastermikeazure 
+  name: fastermikeazure
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: fastermikeazure
   template:
     metadata:
       labels:
-        app: fastermikeazure 
+        app: fastermikeazure
     spec:
       containers:
-        - name: fastermikeazure 
-          image: arcmiha.azurecr.io/fastermikeazure
+        - name: fastermikeazure
+          image: arcmiha.azurecr.io/fastermikeazure:latest
           ports:
           - containerPort: 80
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
