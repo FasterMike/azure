@@ -17,6 +17,6 @@ stages:
 #        dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          228
+          $(tag)
     - upload: manifests
       artifact: manifests

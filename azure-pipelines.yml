@@ -15,11 +15,9 @@ variables:
   imageRepository: 'fastermikeazure'
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '228'
-
-#tag: '$(Build.BuildId)'
+#  tag: '228'
   imagePullSecret: 'arcmiha1619ec65-auth'
-  #tag: '$(Build.BuildId)'
+  tag: '$(Build.BuildId)'
   
 
 
