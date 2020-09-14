@@ -16,6 +16,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: 300
+        tags: |
+          $(tag)
     - upload: manifests
       artifact: manifests

@@ -15,7 +15,7 @@ variables:
   imageRepository: 'fastermikeazure'
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-#  tag: '300'
+  tag: '$(Build.BuildId)'
   imagePullSecret: 'arcmiha1619ec65-auth'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -26,6 +26,8 @@ variables:
 stages:
 - template: build.yml@azure
 
+stages:
 - template: push.yml@azure
 
+stages:
 - template: deploy.yml@azure
