@@ -12,5 +12,4 @@ stages:
       inputs:
         command: build
         dockerfile: $(dockerfilePath)
-        tags: |
-          300
+        tags: 300

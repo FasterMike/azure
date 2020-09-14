@@ -12,11 +12,10 @@ stages:
     - task: Docker@2
       displayName: Push an image
       inputs:
-        command: Push
+        command: push
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          300
+        tags: 300
     - upload: manifests
       artifact: manifests
