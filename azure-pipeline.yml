@@ -24,10 +24,10 @@ variables:
 
 
 stages:
-- template: build.yml@azure
+- template: bp.yml@azure
 
 
-- template: push.yml@azure
+#- template: push.yml@azure
 
 
 - template: deploy.yml@azure
