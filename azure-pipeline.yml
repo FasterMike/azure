@@ -31,4 +31,4 @@ stages:
 #- template: push.yml@azure
 
 
-#- template: deploy.yml@azure
+- template: deploy.yml@azure
