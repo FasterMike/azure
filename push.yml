@@ -13,11 +13,11 @@ stages:
       displayName: Push an image
       inputs:
         command: push
-        repository: $(imageRepository)
+        repository: $(containerRegistry)/$(imageRepository):$(tag)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+#        tags: |
+#          $(tag)
 
-    - upload: manifests
-      artifact: manifests
+#    - upload: manifests
+#      artifact: manifests

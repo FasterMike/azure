@@ -13,6 +13,6 @@ stages:
         command: build
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
+#        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
