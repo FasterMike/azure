@@ -9,7 +9,7 @@ resources:
     name: FasterMike/azure
     endpoint: FasterMike
 
-pool: Default
+pool: Azure Pipelines
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'FasterMikeARC'
