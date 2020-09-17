@@ -6,16 +6,12 @@ stages:
   jobs:  
   - job: Push
     displayName: Push
-#    pool:
-#pool:
-#      vmImage: $(vmImageName)      vmImage: $(vmImageName)
     steps:
     - task: Docker@2
       displayName: Push an image
       inputs:
         command: push
         repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
