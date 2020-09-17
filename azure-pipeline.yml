@@ -9,7 +9,11 @@ resources:
     name: FasterMike/azure
     endpoint: FasterMike
 
-pool: Azure Pipelines
+
+pool:
+  vmImage: ubuntu-latest
+
+
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'FasterMikeARC'
@@ -19,7 +23,7 @@ variables:
   tag: '$(Build.BuildId)'
   imagePullSecret: 'arcmiha1619ec65-auth'
   # Agent VM image name
-  vmImageName: 'ubuntu-16.04'
+#  vmImageName: 'ubuntu-16.04'
 
 
 
