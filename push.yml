@@ -17,3 +17,6 @@ stages:
           $(tag)
 
 
+
+  - upload: manifests
+    artifact: manifests
