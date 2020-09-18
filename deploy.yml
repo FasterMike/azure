@@ -3,6 +3,10 @@ stages:
   displayName: Deploy stage
   dependsOn: Push
 
+  - upload: manifests
+      artifact: manifests
+
+
   jobs:
   - deployment: Deploy
     displayName: Deploy
