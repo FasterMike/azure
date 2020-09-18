@@ -19,7 +19,7 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'FastK8s'
-
+  vmImageName: 'ubuntu-latest'
 
 pool:
   name: Default

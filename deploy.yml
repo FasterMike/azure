@@ -8,6 +8,8 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
+    pool:
+      vmImage: $(vmImageName)
     environment: 'FasterMikeazure.default'
     strategy:
       runOnce:
