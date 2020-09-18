@@ -12,6 +12,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
+
   dockerRegistryServiceConnection: 'FasterMikeARC'
   imageRepository: 'fastermikeazure'
   containerRegistry: 'arcmiha.azurecr.io'

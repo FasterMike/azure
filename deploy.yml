@@ -3,26 +3,22 @@ stages:
   displayName: Deploy stage
   dependsOn: Push
 
-#  - upload: manifests
-#      artifact: manifests
 
 
   jobs:
   - deployment: Deploy
     displayName: Deploy
-#    pool:
-#      vmImage: $(vmImageName)
     environment: 'FasterMikeazure.default'
     strategy:
       runOnce:
         deploy:
           steps:
-          - task: KubernetesManifest@0
-            displayName: Create imagePullSecret
-            inputs:
-              action: createSecret
-              secretName: $(imagePullSecret)
-              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+#          - task: KubernetesManifest@0
+#            displayName: Create imagePullSecret
+#            inputs:
+#              action: createSecret
+#              secretName: $(imagePullSecret)
+#              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
               
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
