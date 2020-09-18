@@ -17,7 +17,7 @@ variables:
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'FasterMike228'
+  imagePullSecret: 'FastK8s'
 
 
 pool:
