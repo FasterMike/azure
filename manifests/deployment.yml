@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: fastermikeazure
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastermikeazure
+  template:
+    metadata:
+      labels:
+        app: fastermikeazure
+    spec:
+      containers:
+        - name: imagefast
+          image: arcmiha.azurecr.io/fastermikeazure
+          ports:
+          - containerPort: 80
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]

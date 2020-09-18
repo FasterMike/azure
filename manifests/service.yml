@@ -1,0 +1,9 @@
+kind: Service
+metadata:
+    name: fastermikeazure
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80 
+    selector:
+        app: fastermikeazure
