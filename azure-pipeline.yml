@@ -13,9 +13,9 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
 
-  dockerRegistryServiceConnection: 'FasterMikeARC'
-  imageRepository: 'fastermikeazure'
-  containerRegistry: 'arcmiha.azurecr.io'
+  dockerRegistryServiceConnection: '123'
+  imageRepository: 'fastimage'
+  containerRegistry: 'fastermikeazure.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'arcmiha1726a60d-auth'
