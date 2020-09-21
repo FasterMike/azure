@@ -21,15 +21,15 @@ variables:
   imagePullSecret: 'arcmiha1726a60d-auth'
   vmImageName: 'ubuntu-latest'
 
-pool:
-  name: Default
+#pool:
+#  name: Default
 
 stages:
 
-- template: build.yml@azure
+- template: bp.yml@azure
 
 
-- template: push.yml@azure
+#- template: push.yml@azure
 
 
 - template: deploy.yml@azure
