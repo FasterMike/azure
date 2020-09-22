@@ -1,20 +1,21 @@
+  
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: fastermikeazure
+  name: fastermiketest 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fastermikeazure
+      app: fastermiketest
   template:
     metadata:
       labels:
-        app: fastermikeazure
+        app: fastermiketest 
     spec:
       containers:
-        - name: imagefast
-          image: arcmiha.azurecr.io/fastermikeazure
+        - name: fastermiketest 
+          image: fastermikeazure.azurecr.io/fastermiketest
           ports:
           - containerPort: 80
           command: [ "/bin/bash", "-c", "--" ]

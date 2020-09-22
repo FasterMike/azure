@@ -1,7 +1,7 @@
 stages:
 - stage: Deploy
   displayName: Deploy stage
-  dependsOn: Build
+  dependsOn: Push
 
 
 
@@ -10,26 +10,48 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'FasterMikeazure.default'
+    environment: 'FasterMiketestdelete-1589.default'
     strategy:
       runOnce:
         deploy:
           steps:
-          - task: KubernetesManifest@0
-            displayName: Create imagePullSecret
-            inputs:
-              action: createSecret
-              secretName: $(imagePullSecret)
-              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-              
-          - task: KubernetesManifest@0
-            displayName: Deploy to Kubernetes cluster
-            inputs:
-              action: deploy
-              manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
-              imagePullSecrets: |
-                $(imagePullSecret)
-              containers: |
-                $(containerRegistry)/$(imageRepository):$(tag)
+
+
+          - bash: az login --service-principal -u "e3e0142f-77c4-4b67-8d29-c56481ef2d4f" -p "8Y4Q3yFt7y_Y~0ulbB2it8kqZAO4qjIfV7" --tenant "1c962577-9b3a-4d16-a4a9-eff280f52f4c"
+            displayName: 'Login into Azure'
+
+
+          - bash: az aks get-credentials --resource-group AARGMiha1 --name AAAKMiha1
+            displayName: 'Login into AKS cluster'
+
+          - bash: kubectl set image deployment/fastermiketest fastermiketest=fastermikeazure.azurecr.io/fastermiketest:$(tag) --record
+            displayName: 'Deploy new docker-image'
+
+          - bash: kubectl describe pods | grep "Image:"
+            displayName: 'Test'
+
+
+
+
+
+
+
+
+#          - task: KubernetesManifest@0
+#            displayName: Create imagePullSecret
+#            inputs:
+#              action: createSecret
+#              secretName: $(imagePullSecret)
+#             dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+#              
+#          - task: KubernetesManifest@0
+#            displayName: Deploy to Kubernetes cluster
+#            inputs:
+#              action: deploy
+#              manifests: |
+#                $(Pipeline.Workspace)/manifests/deployment.yml#
+#                $(Pipeline.Workspace)/manifests/service.yml
+#              imagePullSecrets: |
+#                $(imagePullSecret)
+#              containers: |
+#                $(containerRegistry)/$(imageRepository):$(tag)

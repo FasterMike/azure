@@ -13,23 +13,22 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
 
-  dockerRegistryServiceConnection: '123'
-  imageRepository: 'fastimage'
+  dockerRegistryServiceConnection: '61a4c511-42db-47be-9fce-94cc08b3ca36'
+  imageRepository: 'fastermiketest'
   containerRegistry: 'fastermikeazure.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'arcmiha1726a60d-auth'
-  vmImageName: 'ubuntu-latest'
+  imagePullSecret: 'fastermikeazure54068d4d-auth'
 
-#pool:
-#  name: Default
+pool:
+  name: Default
 
 stages:
 
-- template: bp.yml@azure
+- template: build.yml@azure
 
 
-#- template: push.yml@azure
+- template: push.yml@azure
 
 
 - template: deploy.yml@azure
