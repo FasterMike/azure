@@ -10,7 +10,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'FasterMiketestdelete-1589.default'
+    environment: 'FasterMikeazure.default'
     strategy:
       runOnce:
         deploy:
